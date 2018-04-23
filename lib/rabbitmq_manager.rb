@@ -13,7 +13,11 @@ class RabbitMQManager
       :ssl => ssl_options
     }
 
-    @conn = Faraday::Connection.new(url, opts) do |builder|
+    uri = URI(url)
+    request_host = "#{uri.scheme}://#{uri.user}:#{uri.password}@#{uri.host}:#{uri.port}/"
+    @root_path = uri.path
+
+    @conn = Faraday::Connection.new(request_host, opts) do |builder|
       builder.use Faraday::Response::RaiseError
       builder.use FaradayMiddleware::EncodeJson
       builder.use FaradayMiddleware::ParseJson, :content_type => /\bjson$/
@@ -133,7 +137,10 @@ class RabbitMQManager
   end
 
   private
+
+  attr_reader :root_path
+
   def url(*args)
-    '/api/' + args.map{ |a| URI.encode_www_form_component a.to_s }.join('/')
+    File.join(root_path, "api", args.map{ |a| URI.encode_www_form_component a.to_s }.join('/'))
   end
 end
