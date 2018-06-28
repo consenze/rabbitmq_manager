@@ -1,0 +1,17 @@
+AllCops:
+  Exclude:
+    - vendor/bundle/**/*
+    - vendor/gem/**/*
+    - node_modules/**/*
+    - db/**/*
+    - doc/**/*
+    - bin/**/*
+    - db/schema.rb
+    - config/**/*
+    - .pryrc
+  # The TODO list (please keep this list sorted alphabetically, like shell command `sort --ignore-case` does)
+    - Rakefile
+    - lib/rabbitmq_manager.rb
+    - rabbitmq_manager.gemspec
+    - spec/rabbitmq_manager_spec.rb
+    - spec/spec_helper.rb
