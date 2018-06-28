@@ -46,8 +46,8 @@ class RabbitMQManager
   end
 
   def policy_create(vhost, name, pattern, definition, opts = nil)
-    valid = ["ha-mode", "ha-params", "ha-sync-mode", "alternate-exchange", "dead-letter-exchange","dead-letter-routing-key", "message-ttl", "expires", "max-length", "federation-upstream-set"]
-    definition.keys.each { | key |
+    valid = ["ha-mode", "ha-params", "ha-sync-mode", "alternate-exchange", "dead-letter-exchange", "dead-letter-routing-key", "message-ttl", "expires", "max-length", "federation-upstream-set"]
+    definition.keys.each { |key|
       if !valid.include?(key)
         raise "The definition key '#{key}' is not valid, try these #{valid}"
       end
@@ -141,6 +141,6 @@ class RabbitMQManager
   attr_reader :root_path
 
   def url(*args)
-    File.join(root_path, "api", args.map{ |a| URI.encode_www_form_component a.to_s }.join('/'))
+    File.join(root_path, "api", args.map { |a| URI.encode_www_form_component a.to_s }.join('/'))
   end
 end

@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 require File.expand_path('../lib/rabbitmq_manager/version', __FILE__)
 
 Gem::Specification.new do |gem|
@@ -8,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Ruby wrapper for RabbitMQ management HTTP API}
   gem.homepage      = "https://github.com/carlhoerberg/rabbitmq_manager"
 
-  gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  gem.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = "rabbitmq_manager"
