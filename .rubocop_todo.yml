@@ -14,4 +14,3 @@ AllCops:
     - lib/rabbitmq_manager.rb
     - rabbitmq_manager.gemspec
     - spec/rabbitmq_manager_spec.rb
-    - spec/spec_helper.rb

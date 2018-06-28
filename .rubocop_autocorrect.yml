@@ -1,0 +1,165 @@
+# Documentation for cops under https://rubocop.readthedocs.io/en/latest/cops/
+AllCops:
+  # RuboCop has a bunch of cops enabled by default.
+  # This setting tells RuboCop to ignore them, so only the ones explicitly set
+  # in this file are enabled.
+  DisabledByDefault: true
+  # The final set of exclusions for Rubocop on this project
+  Exclude:
+    - vendor/bundle/**/*
+    - vendor/gem/**/*
+    - node_modules/**/*
+    - db/**/*
+    - doc/**/*
+    - bin/**/*
+    - db/schema.rb
+    - config/**/*
+    - .pryrc
+
+# Empty lines here and there
+Layout/EmptyLines:
+  Enabled: true
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: true
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+Layout/EmptyLinesAroundArguments:
+  Enabled: true
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+Layout/EmptyLinesAroundExceptionHandlingKeywords:
+  Enabled: true
+Layout/EmptyLinesAroundBeginBody:
+  Enabled: true
+# Access modifier location
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+Layout/AccessModifierIndentation:
+  Enabled: true
+# Spaces here and there
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+Layout/SpaceBeforeComma:
+  Enabled: true
+Layout/SpaceAfterComma:
+  Enabled: true
+Layout/SpaceAfterColon:
+  Enabled: true
+Layout/SpaceAfterNot:
+  Enabled: true
+Layout/SpaceInLambdaLiteral:
+  Enabled: true
+Layout/SpaceInsideRangeLiteral:
+  Enabled: true
+Layout/SpaceInsideParens:
+  Enabled: true
+Layout/TrailingBlankLines:
+  Enabled: true
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+Layout/SpaceAroundOperators:
+  Enabled: true
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: true
+Layout/LeadingCommentSpace:
+  Enabled: true
+Layout/TrailingWhitespace:
+  Enabled: true
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+Layout/SpaceAfterMethodName:
+  Enabled: true
+Layout/SpaceAfterSemicolon:
+  Enabled: true
+Layout/SpaceAroundKeyword:
+  Enabled: true
+Layout/SpaceAroundBlockParameters:
+  Enabled: true
+Layout/SpaceBeforeComment:
+  Enabled: true
+Layout/SpaceBeforeSemicolon:
+  Enabled: true
+Layout/SpaceInsideArrayPercentLiteral:
+  Enabled: true
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: true
+Layout/SpaceInsideReferenceBrackets:
+  Enabled: true
+Layout/SpaceInsideStringInterpolation:
+  Enabled: true
+Layout/ExtraSpacing:
+  Enabled: true
+Layout/Tab:
+  Enabled: true
+# some newline/multiline stuff
+Layout/BlockEndNewline:
+  Enabled: true
+Layout/EndOfLine:
+  Enabled: true
+Layout/MultilineBlockLayout:
+  Enabled: true
+Layout/MultilineArrayBraceLayout:
+  Enabled: true
+Layout/MultilineHashBraceLayout:
+  Enabled: true
+Layout/MultilineMethodCallBraceLayout:
+  Enabled: true
+Layout/MultilineMethodDefinitionBraceLayout:
+  Enabled: true
+# some other stuff
+Layout/ConditionPosition:
+  Enabled: true
+Layout/EmptyComment:
+  Enabled: true
+# array/hash indentation and alignment
+Layout/IndentArray:
+  Enabled: true
+  EnforcedStyle: consistent
+Layout/AlignArray:
+  Enabled: true
+Layout/IndentHash:
+  Enabled: true
+  EnforcedStyle: consistent
+Layout/AlignHash:
+  Enabled: true
+  EnforcedLastArgumentHashStyle: ignore_implicit
+# general indentation and alignment
+Layout/BlockAlignment:
+  Enabled: true
+Layout/CaseIndentation:
+  Enabled: true
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+Layout/CommentIndentation:
+  Enabled: true
+Layout/DefEndAlignment:
+  Enabled: true
+Layout/EndAlignment:
+  Enabled: true
+Layout/ElseAlignment:
+  Enabled: true
+Layout/FirstParameterIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+Layout/IndentAssignment:
+  Enabled: true
+Layout/IndentationConsistency:
+  Enabled: true
+Layout/IndentationWidth:
+  Enabled: true
+Layout/IndentHeredoc:
+  Enabled: true
+Layout/InitialIndentation:
+  Enabled: true
+Layout/RescueEnsureAlignment:
+  Enabled: true

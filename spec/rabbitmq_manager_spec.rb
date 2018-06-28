@@ -32,9 +32,9 @@ RSpec.describe RabbitMQManager do
       expect(items.length).to be >= 1
     end
     it 'the list of nodes is a Hash' do
-        hostname = `hostname`.chop
-        item = @manager.node("rabbit@#{hostname}")
-        expect(item).to be_a Hash
+      hostname = `hostname`.chop
+      item = @manager.node("rabbit@#{hostname}")
+      expect(item).to be_a Hash
     end
   end
 
@@ -83,15 +83,15 @@ RSpec.describe RabbitMQManager do
       expect(@manager.vhosts.length).to be >= 2
     end
 
-    it 'can view one vhost' do 
+    it 'can view one vhost' do
       expect(@manager.vhost(vhost)['name']).to eq(vhost)
     end
 
-    it 'can list users' do 
+    it 'can list users' do
       expect(@manager.users.length).to be >= 2
     end
 
-    it 'can view one user' do 
+    it 'can view one user' do
       expect(@manager.user(user)['name']).to eq(user)
     end
 
@@ -110,7 +110,7 @@ RSpec.describe RabbitMQManager do
         users = @manager.user_permissions(user)
         first = users.first
       end
-      
+
       it 'user permissions is an Array' do
         expect(users).to be_an Array
       end
@@ -126,9 +126,7 @@ RSpec.describe RabbitMQManager do
       it 'first users has write permissions' do
         expect(first['write']).to eq('.*')
       end
-
     end
-
   end
 
   describe 'high availability policies can be administered' do
@@ -151,23 +149,23 @@ RSpec.describe RabbitMQManager do
 
     it 'Creating a basic policy requires a name, pattern and a definition' do
       name = make_name 'rspec-policy'
-      @manager.policy_create(vhost, name, '^None', {'ha-mode'=>'all'})
+      @manager.policy_create(vhost, name, '^None', { 'ha-mode' => 'all' })
       policies = @manager.policies(vhost)
       expect(policies.length).to eq(1)
     end
 
     it 'individual policies can be queried' do
       name = make_name 'rspec-policy'
-      @manager.policy_create(vhost, name, '^None', {'ha-mode'=>'all'})
+      @manager.policy_create(vhost, name, '^None', { 'ha-mode' => 'all' })
       policy = @manager.policy_get(vhost, name)
-      
+
       expect(policy['name']).to eq(name)
     end
 
     it 'individual policies can be deleted' do
       name = make_name 'rspec-policy'
 
-      @manager.policy_create(vhost, name, '^None', {'ha-mode'=>'all'})
+      @manager.policy_create(vhost, name, '^None', { 'ha-mode' => 'all' })
       @manager.policy_delete(vhost, name)
 
       expect(@manager.policies(vhost).length).to eq(0)
@@ -179,6 +177,5 @@ RSpec.describe RabbitMQManager do
         @manager.policy_get(vhost, name)
       }.to raise_error Faraday::Error::ResourceNotFound
     end
-
   end
 end
